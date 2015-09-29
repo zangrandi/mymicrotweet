@@ -1,0 +1,13 @@
+<div class="row">
+  <div class="col-md-8 col-md-offset-2">
+  	<h2>Notifications</h2>
+  	<div class="well">
+  		<% @notifications.each_with_index do |notification, i| %>
+        <p><strong><%= link_to notification.sender.fullname, user_path(notification.sender) %></strong> started to follow you.</p>
+				<% unless i == @notifications.length-1 %>
+					<hr>
+				<% end -%>
+  		<% end -%>
+  	</div>
+  </div>
+</div>

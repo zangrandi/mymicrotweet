@@ -1,0 +1,4 @@
+$("#posts").html("<%= escape_javascript(render :partial => 'posts/posts', :locals => { :posts => @posts }) %>"); 
+$("#posts").effect("highlight", {}, 3000);
+$("#post-counter").text("0");
+$("#post_text").val('');

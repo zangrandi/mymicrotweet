@@ -1,0 +1,15 @@
+<div class="row">
+  <div class="col-md-8 col-md-offset-2">
+  	<div class="row">
+	  	<div class="col-md-10">
+		    <h2><%= @user.fullname.possessive %> Feed</h2>
+	  	</div>
+	  	<div class="col-md-2 text-right">
+	  		<%= render 'follow_btn', user: @user %>
+	  	</div>
+  	</div>
+    <div id="posts" class="well">
+      <%= render "posts/posts", posts: @posts %>
+    </div>
+  </div>
+</div>

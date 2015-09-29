@@ -1,0 +1,46 @@
+<div class="row">
+  <div class="col-md-8 col-md-offset-2">
+  	<div class="well">
+	  	<% if user_signed_in? %>
+	  		<%= form_for Post.new, remote: true do |f| %>
+	  			<div class="form-group">
+				    <%= f.text_area :text, class: 'form-control', placeholder: "Say something interesting" %>
+				  </div>
+				  <div class="row">
+				  	<div class="col-md-1 col-md-offset-9">
+					  	<div id="post-counter" class="text-muted text-right">
+					  		0
+					  	</div>
+				  	</div>
+				  	<div class="col-md-2 text-right">
+					  	<%= f.submit "Post".html_safe, class: "btn btn-primary", id: "post-btn" %>
+				  	</div>
+				  </div>
+	  		<% end -%>
+	  	<% end -%>
+	  </div>
+    <h2>Activity Feed</h2>
+    <div id="posts" class="well">
+    	<% if @posts.present? %>
+	      <%= render "posts", posts: @posts %>
+	    <% else %>
+	    	<%= render "no_activity_message" %>
+	    <% end -%>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+	$(document).ready(function() {
+		$('#post_text').keyup(function () {
+		  var max = 140;
+		  var len = $(this).val().length;
+		  $("#post-counter").text(len);
+		  if (len > max) {
+		    $("#post-btn").prop("disabled", true);
+		  } else {
+		    $("#post-btn").prop("disabled", false);
+		  }
+		});
+	});
+</script>

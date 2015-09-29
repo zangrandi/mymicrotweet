@@ -1,0 +1,26 @@
+development:
+  adapter: postgresql
+  username: Zangrandi
+  password: 4Fokodugue!
+  pool: 5
+  timeout: 5000
+  min_messages: WARNING
+  database: microtweet_development
+  
+test:
+  adapter: postgresql
+  username: Zangrandi
+  password: 4Fokodugue!
+  pool: 5
+  timeout: 5000
+  min_messages: WARNING
+  database: microtweet_test
+
+production:
+  adapter: postgresql
+  username: Zangrandi
+  password: 4Fokodugue!
+  pool: 5
+  timeout: 5000
+  min_messages: WARNING
+  database: microtweet_production

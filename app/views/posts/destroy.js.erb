@@ -1,0 +1,5 @@
+<% if @posts.present? %>
+	$("#posts").html("<%= escape_javascript(render :partial => 'posts/posts', :locals => { :posts => @posts }) %>"); 
+<% else %>
+	$("#posts").html("<%= escape_javascript(render :partial => 'posts/no_activity_message') %>"); 
+<% end %>

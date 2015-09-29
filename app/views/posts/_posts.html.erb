@@ -1,0 +1,25 @@
+<% posts.each_with_index do |post, i| %>
+	<div class="row">
+		<div class="col-xs-2">
+			<%= image_tag post.user.avatar.url(:thumb), class: "post-avatar thumbnail" %>
+		</div>
+		<div class="col-xs-9">
+			<strong><%= post.user.fullname %></strong> ·
+			<span class="text-muted">
+				<%= link_to post.username, user_path(post.user) %> ·
+				<%= time_ago_in_words(post.created_at) %>
+			</span>
+			<p><%= parse_text(post.text) %></p>
+		</div>
+		<div class="col-xs-1">
+			<% if post.user == current_user %>
+			<div class="text-right">
+				<%= link_to "x", post_path(post), class: "btn btn-default btn-xs", method: :delete, remote: true %>
+			</div>
+			<% end -%>
+		</div>
+	</div>
+	<% unless i == posts.length-1 %>
+		<hr>
+	<% end -%>
+<% end -%>

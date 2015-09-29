@@ -1,0 +1,24 @@
+<div class="row">
+  <div class="col-md-8 col-md-offset-2">
+    <div class="row">
+      <div class="col-md-7">
+      	<h2>Users</h2>
+      </div>
+      <div class="col-md-5">
+        <%= form_for :search, url: search_users_path, remote: true do |f| %>
+          <div id="search-users" class="input-group">
+            <div class="form-group text-right">
+              <%= f.text_field :text, id: "search-user-field", class: 'form-control', placeholder: "Search by username" %>
+            </div>
+            <span class="input-group-btn">
+              <%= f.submit "Search", class: "btn btn-default", id: "btn-search" %>
+            </span>
+          </div><!-- /input-group -->
+        <% end -%>
+      </div>
+    </div>
+  	<div id="users" class="well">
+			<%= render "users", users: @users %>
+  	</div>
+  </div>
+</div>

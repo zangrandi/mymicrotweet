@@ -1,0 +1,23 @@
+<div id="home-content" class="row">
+  <div class="col-md-6 col-md-offset-1">
+    <h1>Microtweet</h1>
+    <h2>A new way to see what your friends are doing.</h2>
+
+    <div class="well">
+      <h3>Recent Activity</h3>
+      <%= render "posts/posts", posts: @recent_posts %>
+      <div class="text-right">
+        <%= link_to "See more →", public_feed_posts_path, class: "btn btn-primary" %>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="well">
+      <%= render "new_session" %>
+    </div>
+    <div class="well">
+      <h3>Sign up</h3>
+      <%= render "new_registration" %>
+    </div>
+  </div>
+</div>

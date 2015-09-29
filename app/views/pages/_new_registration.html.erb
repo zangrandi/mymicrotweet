@@ -1,0 +1,21 @@
+<%= form_for(:user, url: registration_path(:user)) do |f| %>
+  <div class="form-group">
+    <%= f.email_field :email, class: 'form-control', placeholder: "E-mail" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.password_field :password, class: 'form-control', placeholder: "Password" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.text_field :fullname, class: 'form-control', placeholder: "Full Name" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.text_field :username, class: 'form-control', placeholder: "Username" %>
+  </div>
+
+  <div class="actions text-right">
+    <%= f.submit "Sign up", class: "btn", id: "main-signup" %>
+  </div>
+<% end %>

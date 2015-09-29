@@ -1,0 +1,87 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+footer {
+	margin-top: 40px;
+}
+
+#home { 
+  background: url(<%= asset_path("cover-photo-2.jpg") %>) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.navbar {
+	margin-bottom: 0px;
+	border: 0px;
+	background: white;
+}
+
+#main-content {
+	padding-top: 40px;
+	background: transparent;
+}
+
+.well {
+	padding: 15px;
+	background: white;
+	h3 {
+		margin-top: 0;
+	}
+}
+
+h1 {
+	color: white;
+	font-size: 50px;
+}
+h2 {
+	font-size: 40px;
+	color: white;
+	font-weight: 100;
+	margin-bottom: 30px;
+}
+
+.expand:focus {
+    height: 5em;
+}
+
+#post-counter {
+	padding-top: 8px;
+}
+
+.footer {
+  height: 60px;
+  color: white;
+}
+
+.post-avatar {
+	width: 100%;
+}
+
+#search-users {
+	padding-top: 30px;
+	margin-bottom: 20px;
+}
+
+#search-user-field {
+	border-radius: 15px 0 0 15px;
+}
+
+#btn-search {
+	border-radius: 0 15px 15px 0;
+}

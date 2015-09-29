@@ -1,0 +1,13 @@
+<div id="follow-btn-<%= user.id %>">
+	<% if user_signed_in? %>
+		<% unless current_user == user %>	
+			<% if current_user.publishers.include?(user) %>
+				<%= button_to "Unfollow", unfollow_user_path(user) , class: "btn btn-warning btn-unfollow", remote: true %>
+			<% else %>
+			  <%= button_to "Follow", follow_user_path(user), class: "btn btn-primary btn-follow", remote: true %>
+			<% end -%>
+		<% end -%>
+	<% else %>
+		<%= button_to "Follow", follow_user_path(user), class: "btn btn-primary btn-follow" %>
+	<% end -%>
+</div>

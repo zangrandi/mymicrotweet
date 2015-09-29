@@ -1,0 +1,24 @@
+<% if users.present? %>
+	<% users.each_with_index do |user, i| %>
+		<div class="row">
+			<div class="col-xs-2">
+				<%= image_tag user.avatar.url(:thumb), class: "post-avatar thumbnail" %>
+			</div>
+			<div class="col-xs-9">
+				<strong><%= link_to user.fullname, user_path(user) %></strong> ·
+				<span class="text-muted">
+					<%= user.username %> ·
+					<%= pluralize(user.posts.count, "post") %>
+				</span>
+				<% unless user == current_user %>
+					<p><%= render 'follow_btn', user: user %></p>
+				<% end -%>
+			</div>
+		</div>
+		<% unless i == @users.length-1 %>
+			<hr>
+		<% end -%>
+	<% end -%>
+<% else %>
+	<h4 class="text-center text-muted">There's no User.</h4>
+<% end -%>
